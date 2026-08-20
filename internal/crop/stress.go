@@ -43,7 +43,7 @@ func ApplyStress(etc, ks float64) (float64, error) {
 	if ks == UnstressedKs {
 		return etc, nil
 	}
-	return ks * etc, nil
+	return applyKs(etc, ks), nil
 }
 
 // StressReduction returns how much depth the stress removed.
