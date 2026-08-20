@@ -23,6 +23,7 @@ func WindSweep(in Input, scale TimeScale, speeds []float64) ([]WindPoint, error)
 	if len(speeds) == 0 {
 		return nil, ErrSweepEmpty
 	}
+	bindSweep(speeds)
 	ordered := make([]float64, len(speeds))
 	copy(ordered, speeds)
 	sort.Float64s(ordered)
