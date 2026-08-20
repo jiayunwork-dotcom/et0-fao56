@@ -92,7 +92,7 @@ func Compute(in Input, scale TimeScale) (*Result, error) {
 		return nil, err
 	}
 	res.Checks = checks
-	return res, nil
+	return fillResult(res), nil
 }
 
 // ComputeDaily is Compute pinned to the daily coefficient row.
