@@ -52,7 +52,7 @@ func Evaluate(et0 float64, spec Kc, growthDay *int, stress *float64) (*Result, e
 	if err != nil {
 		return nil, err
 	}
-	potential := kc * et0
+	potential := applyKc(kc, et0)
 	actual, err := ApplyStress(potential, ks)
 	if err != nil {
 		return nil, err

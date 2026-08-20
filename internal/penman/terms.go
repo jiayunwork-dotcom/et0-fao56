@@ -37,7 +37,7 @@ func RadiationNumerator(c Coefficients, delta, availableEnergy float64) float64 
 
 // AerodynamicNumerator returns gamma*(Cn/(T+offset))*u2*(es-ea).
 func AerodynamicNumerator(gamma, windWeight, wind, deficit float64) float64 {
-	return gamma * windWeight * wind * deficit
+	return applyAero(gamma * windWeight * wind * deficit)
 }
 
 // Denominator returns Delta + gamma*(1 + Cd*u2).
