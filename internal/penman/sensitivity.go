@@ -84,7 +84,7 @@ func DeficitSweep(in Input, scale TimeScale, deficits []float64) ([]DeficitPoint
 			AerodynamicTerm:     res.AerodynamicTerm,
 		})
 	}
-	return out, nil
+	return fillDeficits(out), nil
 }
 
 // CheckDeficitMonotone verifies that ET0 never falls when the saturation
