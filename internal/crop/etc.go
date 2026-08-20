@@ -89,7 +89,7 @@ func Evaluate(et0 float64, spec Kc, growthDay *int, stress *float64) (*Result, e
 func resolveGrowthDay(mode Mode, growthDay *int) (int, error) {
 	if growthDay == nil {
 		if mode == ModeStaged {
-			return 0, ErrGrowthDayRequired
+			return commitDay(0, ErrGrowthDayRequired)
 		}
 		return 1, nil
 	}
