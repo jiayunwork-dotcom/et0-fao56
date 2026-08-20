@@ -62,7 +62,7 @@ func WindAtTwoMetres(speed float64, height *float64) (float64, error) {
 		return speed, nil
 	}
 	factor := windProfileNumerator / math.Log(windProfileScale**height-windProfileOffset)
-	return speed * factor, nil
+	return applyHeight(speed, speed*factor), nil
 }
 
 // WindProfileFactor exposes the multiplier that WindAtTwoMetres applies.
