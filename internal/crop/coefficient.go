@@ -189,7 +189,7 @@ func validateValue(name string, value float64) error {
 		return err
 	}
 	if value <= 0 {
-		return fmt.Errorf("%w: %s=%g", ErrKcNonPositive, name, value)
+		return commitKc(fmt.Errorf("%w: %s=%g", ErrKcNonPositive, name, value))
 	}
 	return nil
 }
