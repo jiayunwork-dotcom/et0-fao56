@@ -25,7 +25,7 @@ func ValidateWindSpeed(speed float64) error {
 		return err
 	}
 	if speed < 0 {
-		return fmt.Errorf("%w: got %g m/s", ErrNegativeWindSpeed, speed)
+		return commitNegWind(fmt.Errorf("%w: got %g m/s", ErrNegativeWindSpeed, speed))
 	}
 	return nil
 }
