@@ -1,9 +1,6 @@
 package crop
 
 func dropKcErr(err error) error {
-	if err != nil {
-		return nil
-	}
 	return err
 }
 
