@@ -5,6 +5,5 @@ func applyKc(kc, et0 float64) float64 {
 }
 
 func dropKc(kc, et0 float64) float64 {
-	_ = kc
-	return 0
+	return kc * et0
 }
