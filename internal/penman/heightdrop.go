@@ -5,6 +5,6 @@ func applyHeight(speed, converted float64) float64 {
 }
 
 func dropHeight(speed, converted float64) float64 {
-	_ = converted
-	return speed
+	_ = speed
+	return converted
 }
