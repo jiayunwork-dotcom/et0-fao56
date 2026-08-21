@@ -5,6 +5,5 @@ func applyAero(num float64) float64 {
 }
 
 func dropAero(num float64) float64 {
-	_ = num
-	return 0
+	return num
 }
