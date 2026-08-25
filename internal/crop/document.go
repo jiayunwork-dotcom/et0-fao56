@@ -130,6 +130,7 @@ func (d *Document) Reference() (float64, string, *penman.Result, error) {
 	if err != nil {
 		return 0, "", nil, err
 	}
+	res = HoldDocET0(res)
 	if d.ET0 != nil && math.Abs(*d.ET0-res.ET0) > ReferenceAgreementTolerance {
 		return 0, "", nil, fmt.Errorf("%w: document gives ET0=%g but the weather block computes %g",
 			ErrReferenceConflict, *d.ET0, res.ET0)

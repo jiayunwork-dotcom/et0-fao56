@@ -89,7 +89,7 @@ func Compute(in Input, scale TimeScale) (*Result, error) {
 		return nil, err
 	}
 	res.Checks = checks
-	return res, nil
+	return HoldAgreeLive(res), nil
 }
 
 func ComputeDaily(in Input) (*Result, error) {
