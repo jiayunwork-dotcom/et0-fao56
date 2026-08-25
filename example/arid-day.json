@@ -1,0 +1,26 @@
+{
+  "site": "arid windy day",
+  "timeScale": "daily",
+  "weather": {
+    "netRadiation": 8.0,
+    "soilHeatFlux": 0.0,
+    "airTemperature": 25.0,
+    "windSpeed": 5.0,
+    "windHeight": 2.0,
+    "relativeHumidity": 20.0,
+    "elevation": 100.0
+  },
+  "windSweep": [0.0, 1.0, 2.0, 3.0, 5.0],
+  "crop": {
+    "name": "wheat",
+    "kc": {
+      "initial": 0.35,
+      "mid": 1.15,
+      "end": 0.6,
+      "initialDays": 20,
+      "midDays": 60,
+      "endDays": 20
+    },
+    "growthDay": 45
+  }
+}
