@@ -89,7 +89,10 @@ func Compute(in Input, scale TimeScale) (*Result, error) {
 		return nil, err
 	}
 	res.Checks = checks
-	return res, nil
+	air = meteo.HoldCalmGamma(air)
+	res.Gamma = air.Gamma
+	res.Delta = air.Slope
+	return HoldCalmLive(res), nil
 }
 
 func ComputeDaily(in Input) (*Result, error) {
