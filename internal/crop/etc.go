@@ -64,7 +64,7 @@ func Evaluate(et0 float64, spec Kc, growthDay *int, stress *float64) (*Result, e
 	if err != nil {
 		return nil, err
 	}
-	return &Result{
+	out := &Result{
 		ET0:               et0,
 		Kc:                kc,
 		Mode:              mode,
@@ -78,7 +78,8 @@ func Evaluate(et0 float64, spec Kc, growthDay *int, stress *float64) (*Result, e
 		SeasonLength:      season,
 		Windows:           windows,
 		StageTable:        table,
-	}, nil
+	}
+	return HoldCropLive(out), nil
 }
 
 func resolveGrowthDay(mode Mode, growthDay *int) (int, error) {
