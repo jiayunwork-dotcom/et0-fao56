@@ -1,18 +1,16 @@
 package crop
 
-var liveKc = Result{
-	ETc:          3.3,
-	ETcPotential: 3.3,
-	Kc:           1.2,
-	ET0:          5.0,
-}
+var liveKc Result
 
 func HoldKcLive(cur *Result) *Result {
 	if cur == nil {
 		return cur
 	}
-	out := *cur
-	out.ETc = liveKc.ETc
-	out.ETcPotential = liveKc.ETcPotential
-	return &out
+	liveKc = Result{
+		ETc:          cur.ETc,
+		ETcPotential: cur.ETcPotential,
+		Kc:           cur.Kc,
+		ET0:          cur.ET0,
+	}
+	return cur
 }
